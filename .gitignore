@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+
+
+# Dependency directory
+node_modules
+bower_components
+
+# Publish directory
+.publish
+
+# Other
+.DS_Store
+.env
+package-lock.json
+
+# Notes
+.NOTES.md

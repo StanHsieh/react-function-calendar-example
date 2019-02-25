@@ -1,0 +1,131 @@
+.calendar {
+  position: relative;
+  color: #555;
+  display: inline-block;
+}
+.calendar::before {
+  content: url(./calendar.svg); 
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 24px;
+  height: 24px;
+  background: #555;
+  padding: 1px;
+  border-radius: 4px;
+}
+.calendar.focusing::before {
+  background: #4585d0;
+}
+.calendar .calendar-input {
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 200px;
+  padding-left: 38px;
+  color: #555;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+.calendar .calendar-input:focus {
+  outline: 0;
+  border-color: #4585d0;
+}
+.calendar .calendar-input::placeholder {
+  color: #ddd;
+}
+
+/* container */
+.calendar .calendar-container {
+  position: absolute;
+  width: 240px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-weight: bold;
+  z-index: 1028;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.calendar.inline-calendar .calendar-container {
+  position: relative;
+  z-index: unset;
+}
+.calendar .calendar-header {
+  display: flex;
+  flex-direction: row;
+  height: 22px;
+  align-items: center;
+}
+.calendar .calendar-header > * {
+  flex: 1;
+  text-align: center;
+}
+.calendar  .calendar-header-title {
+  flex: 5;
+  cursor: pointer;
+}
+i.arrow {
+  border: solid #555;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.arrow.right {
+  transform: rotate(-45deg);
+}
+.arrow.left {
+  transform: rotate(135deg);
+}
+.calendar .row {
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  text-align: center;
+}
+.calendar .row > * {
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+}
+.calendar-container .calendar-main {
+  display: flex;
+  flex-flow: row wrap; 
+  margin-top: 16px;
+}
+.calendar-container .calendar-main > * {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  cursor: pointer;
+}
+.calendar .row .curr {
+  cursor: pointer;
+}
+.calendar .disabled {
+  color: #eeeeee;
+  cursor: default;
+}
+.calendar .today {
+  color: #db3d44;
+}
+.calendar .selected {
+  color: #fff;
+  background: #db3d44;
+}
+.calendar .selected.disabled {
+  color: #fff;
+  background: #eeeeee;
+}
+.calendar .row .selected {
+  border-radius: 15px;
+}
+.calendar-container .calendar-main .selected {
+  border-radius: 27.5px;
+}
